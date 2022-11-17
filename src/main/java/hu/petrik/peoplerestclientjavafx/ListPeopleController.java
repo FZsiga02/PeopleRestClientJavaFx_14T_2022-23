@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Optional;
 
-public class ListPeopleController {
+public class ListPeopleController extends Controller{
 
     @FXML
     private Button insertButton;
@@ -117,14 +117,4 @@ public class ListPeopleController {
         }
     }
 
-    private void error(String headerText, String contentText) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setHeaderText(headerText);
-        alert.setContentText(contentText);
-        alert.showAndWait();
-    }
-
-    private void error(String headerText) {
-        error(headerText, "");
-    }
 }

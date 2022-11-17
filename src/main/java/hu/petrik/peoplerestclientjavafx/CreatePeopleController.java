@@ -8,7 +8,7 @@ import javafx.scene.control.*;
 
 import java.io.IOException;
 
-public class CreatePeopleController {
+public class CreatePeopleController extends Controller {
     @FXML
     private TextField nameField;
     @FXML
@@ -49,16 +49,13 @@ public class CreatePeopleController {
                 emailField.setText("");
                 ageField.getValueFactory().setValue(30);
             } else {
-                // TODO: error
+                String content = response.getContent();
+                error(content);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private void warning(String headerText) {
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setHeaderText(headerText);
-        alert.showAndWait();
-    }
+
 }
